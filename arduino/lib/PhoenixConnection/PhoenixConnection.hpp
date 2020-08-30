@@ -1,10 +1,9 @@
 #ifndef PHOENIXCONNECTIONS_H
 #define PHOENIXCONNECTIONS_H
+
 #include <ESP8266WiFi.h>
 #include <ArduinoWebsockets.h>
 // https://github.com/gilmaimon/ArduinoWebsockets
-
-#include "PhoenixConnection.hpp"
 
 #define STATUS_LED 16
 
@@ -38,4 +37,5 @@ class PhoenixConnection
         void setDefaultLeaveCallback();
         void setEventCallback();
 };
+
 #endif

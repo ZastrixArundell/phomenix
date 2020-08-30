@@ -1,6 +1,7 @@
 #include <ESP8266WiFi.h>
 #include <Config.h>
 #include <PhoenixConnection.hpp>
+#include <WebsocketConsumer.hpp>
 
 // Values specific to the WiFi connection
 const char* ssid     = SSID;
@@ -14,12 +15,9 @@ const char* origin       = ORIGIN;
 
 PhoenixConnection connection(deviceId, deviceName, websocketUrl, origin);
 
-// Toggle whether you want to use custom callbacks or the default
-#define CUSTOM true
-
 void setup()
 {
-  	Serial.begin(115200);
+	Serial.begin(115200);
 	delay(100);
 
 	Serial.print("Connecting to ");
@@ -41,23 +39,21 @@ void setup()
 	pinMode(16, OUTPUT);
 	digitalWrite(16, HIGH);
 
-	#if CUSTOM == true
-		connection.setMessageCallback([](WebsocketsMessage message){
-			Serial.print("Hey, I got a new message: ");
-			Serial.println(message.data());
-		}).setJoinCallback([](){
-			Serial.print("So I just joined a new websocket channel with the name of: ");
-			Serial.println(deviceName);
-		}).setLeaveCallback([](){
-			Serial.println("Well, looks like I left!");
-		});
-	#endif
-	
-	connection.connect().join();
+	pinMode(D6, OUTPUT);
+
+	connection
+		.setMessageCallback(websocket_consumer::consumeMessage)
+		.connect()
+		.join();
 }
+
+void (* restart) (void) = 0;
 
 void loop()
 {
-  connection.poll();
-  connection.sendHeartbeat();
+	connection.poll();
+	connection.sendHeartbeat();
+
+	if(!connection.isConnected())
+		restart();
 }
