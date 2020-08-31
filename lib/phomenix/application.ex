@@ -10,6 +10,7 @@ defmodule Phomenix.Application do
     children = [
       # Start the Ecto repository
       Phomenix.Repo,
+      {Phoenix.PubSub, name: Phomenix.PubSub},
       # Start the endpoint when the application starts
       PhomenixWeb.Endpoint,
       # Starts a worker by calling: Phomenix.Worker.start_link(arg)

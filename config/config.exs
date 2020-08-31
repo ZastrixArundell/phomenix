@@ -15,7 +15,7 @@ config :phomenix, PhomenixWeb.Endpoint,
   url: [host: "localhost"],
   secret_key_base: "HPjdRPHPv1ya3w40a3LRgLCJU69y1TV49KUjVHSX6GbJNFY6ohxbLNLvvgl7fT48",
   render_errors: [view: PhomenixWeb.ErrorView, accepts: ~w(html json)],
-  pubsub: [name: Phomenix.PubSub, adapter: Phoenix.PubSub.PG2],
+  pubsub_server: Phomenix.PubSub,
   live_view: [signing_salt: "vjCFrYDL"]
 
 # Configures Elixir's Logger
