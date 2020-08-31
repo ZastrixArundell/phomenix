@@ -17,43 +17,43 @@ PhoenixConnection connection(deviceId, deviceName, websocketUrl, origin);
 
 void setup()
 {
-	Serial.begin(115200);
-	delay(100);
+    Serial.begin(115200);
+    delay(100);
 
-	Serial.print("Connecting to ");
-	Serial.println(ssid);
+    Serial.print("Connecting to ");
+    Serial.println(ssid);
 
-	WiFi.begin(ssid, password);
-	WiFi.softAPdisconnect(true);
+    WiFi.begin(ssid, password);
+    WiFi.softAPdisconnect(true);
 
-	while (WiFi.status() != WL_CONNECTED)
-	{
-		delay(500);
-		Serial.print(".");
-	}
-	
-	Serial.println("");
-	Serial.print("WiFi connected at: ");
-	Serial.print(WiFi.localIP());
+    while (WiFi.status() != WL_CONNECTED)
+    {
+        delay(500);
+        Serial.print(".");
+    }
 
-	pinMode(16, OUTPUT);
-	digitalWrite(16, HIGH);
+    Serial.println("");
+    Serial.print("WiFi connected at: ");
+    Serial.print(WiFi.localIP());
 
-	pinMode(D6, OUTPUT);
+    pinMode(16, OUTPUT);
+    digitalWrite(16, HIGH);
 
-	connection
-		.setMessageCallback(websocket_consumer::consumeMessage)
-		.connect()
-		.join();
+    pinMode(D6, OUTPUT);
+
+    connection
+        .setMessageCallback(websocket_consumer::consumeMessage)
+        .connect()
+        .join();
 }
 
 void (* restart) (void) = 0;
 
 void loop()
 {
-	connection.poll();
-	connection.sendHeartbeat();
+    connection.poll();
+    connection.sendHeartbeat();
 
-	if(!connection.isConnected())
-		restart();
+    if(!connection.isConnected())
+        restart();
 }
