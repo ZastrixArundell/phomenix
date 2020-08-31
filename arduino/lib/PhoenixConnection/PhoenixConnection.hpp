@@ -20,8 +20,9 @@ class PhoenixConnection
         const char *deviceId, *deviceName, *websocketUrl;
         unsigned long lastHeartBeat;
         EmptyMethod joinCallback, leaveCallback;
+        const boolean *acMode, *rgbMode;
     public:
-        PhoenixConnection(const char* deviceId, const char* deviceName, const char* websocketUrl, const char* origin);
+        PhoenixConnection(const char* deviceId, const char* deviceName, const char* websocketUrl, const char* origin, const boolean* acMode, const boolean* rgbMode);
         PhoenixConnection& connect();
         PhoenixConnection& join();
         PhoenixConnection& setJoinCallback(const EmptyMethod& joinCallback);

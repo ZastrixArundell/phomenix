@@ -13,7 +13,11 @@ const char* deviceName   = DEVICE_NAME;
 const char* websocketUrl = WEBSOCKET_URL;
 const char* origin       = ORIGIN;
 
-PhoenixConnection connection(deviceId, deviceName, websocketUrl, origin);
+// Values specific for the work mode
+const boolean useAC   = AC_MODE;
+const boolean useRGB  = RGB_STRIP;
+
+PhoenixConnection connection(deviceId, deviceName, websocketUrl, origin, &useAC, &useRGB);
 
 void setup()
 {

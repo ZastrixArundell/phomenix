@@ -1,10 +1,12 @@
 #include "PhoenixConnection.hpp"
 
-PhoenixConnection::PhoenixConnection(const char* deviceId, const char* deviceName, const char* websocketUrl, const char* origin)
+PhoenixConnection::PhoenixConnection(const char* deviceId, const char* deviceName, const char* websocketUrl, const char* origin, const boolean* acMode, const boolean* rgbMode)
 {
     this -> deviceId = deviceId;
     this -> deviceName = deviceName;
     this -> websocketUrl = websocketUrl;
+    this -> acMode = acMode;
+    this -> rgbMode = rgbMode;
 
     setDefaultJoinCallback();
     setDefaultLeaveCallback();
@@ -23,9 +25,20 @@ PhoenixConnection& PhoenixConnection::connect()
 
 PhoenixConnection& PhoenixConnection::join()
 {
-    const char *join_template = "{\"topic\":\"controller:%s\",\"event\":\"phx_join\",\"payload\":{\"name\":\"%s\"},\"ref\":0}";
-    char *result = static_cast<char*>(malloc(strlen(join_template) + strlen(deviceId) + strlen(deviceName) + 1 - 4));
-    sprintf(result, join_template, deviceId, deviceName);
+    const char* typePayload;
+
+    if(*acMode && *rgbMode)
+        typePayload = "\"types\":[\"acMode\",\"rgbMode\"]";
+    else if(*acMode)
+        typePayload = "\"types\":[\"acMode\"]";
+    else if(*rgbMode)
+        typePayload = "\"types\":[\"rgbMode\"]";
+    else
+        typePayload = "\"types\":[]";
+
+    const char *join_template = "{\"topic\":\"controller:%s\",\"event\":\"phx_join\",\"payload\":{\"name\":\"%s\",%s},\"ref\":0}";
+    char *result = static_cast<char*>(malloc(strlen(join_template) + strlen(deviceId) - 2 + strlen(deviceName) - 2 + strlen(typePayload) - 2 + 1));
+    sprintf(result, join_template, deviceId, deviceName, typePayload);
     client.send(result);
     free(result);
 
