@@ -1,3 +1,96 @@
 /* This file is for your main application css. */
 
 @import "./phoenix.css";
+
+.controller-button {
+    min-width: 100%;
+    background-color: seagreen;
+    border-color: rgba(0, 0, 0, 0);
+}
+
+.button-white {
+    background-color: white;
+    color: black;
+    border-color: black;
+}
+
+.button-black {
+    background-color: black;
+    color: white;
+}
+
+.button-red {
+    background-color: rgb(235, 67, 52);
+    color: white;
+}
+
+.button-option {
+    background-color: rgb(44, 168, 168);
+    color: black;
+}
+
+/* Options for red buttons */
+
+.button-red-0 {
+    background-color: #C01A2F;
+}
+
+.button-red-1 {
+    background-color: #D3202D;
+}
+
+.button-red-2 {
+    background-color: #D72E21;
+}
+
+.button-red-3 {
+    background-color: #D3862C;
+}
+
+.button-red-4 {
+    background-color: #D8B201;
+}
+
+/* Options for green buttons */
+
+.button-green-0 {
+    background-color: #058251;
+}
+
+.button-green-1 {
+    background-color: #019067;
+}
+
+.button-green-2 {
+    background-color: #01ACD2;
+}
+
+.button-green-3 {
+    background-color: #019CB8;
+}
+
+.button-green-4 {
+    background-color: #0579B1;
+}
+
+/* Options for blue buttons */
+
+.button-blue-0 {
+    background-color: #425093;
+}
+
+.button-blue-1 {
+    background-color: #1685C7;
+}
+
+.button-blue-2 {
+    background-color: #3D3552;
+}
+
+.button-blue-3 {
+    background-color: #5A3164;
+}
+
+.button-blue-4 {
+    background-color: #B3327C;
+}

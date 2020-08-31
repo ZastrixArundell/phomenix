@@ -2,7 +2,7 @@ defmodule PhomenixWeb.UserSocket do
   use Phoenix.Socket
 
   ## Channels
-  # channel "room:*", PhomenixWeb.RoomChannel
+  channel "user:*", PhomenixWeb.UserChannel
 
   # Socket params are passed from the client and can
   # be used to verify and authenticate a user. After
