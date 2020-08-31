@@ -26,6 +26,8 @@ channel.join()
 
 var output = window.location.href.split("/").pop();
 
+// Everyhing regarding RGB controls
+
 let elements = document.getElementsByClassName("controller-button");
 
 for(let i = 0; i < elements.length; i++)
@@ -54,3 +56,37 @@ function onClick(event) {
 function onRelease() {
   clearInterval(interval);
 }
+
+// Everything regarding AC controls
+
+document.getElementById("powerButton").addEventListener('click', (event) => {
+  if(event.target.textContent == "OFF")
+  {
+    event.target.textContent = "ON";
+    event.target.classList.remove('button-red');
+    event.target.classList.add('button-green-1');
+  }
+  else
+  {
+    event.target.textContent = "OFF";
+    event.target.classList.add('button-red');
+    event.target.classList.remove('button-green-1');
+  }
+}, false);
+
+document.getElementById("sendButton").addEventListener('click', (event) => {
+  let payload = {};
+
+  payload["power"] = document.getElementById("powerButton").textContent == "ON";
+  payload["eco"] = false;
+  payload["health"] = false;
+  payload["light"] = document.getElementById("lights").checked;
+  payload["turbo"] = document.getElementById("turbo").checked;
+  payload["horizontalSwing"] = document.getElementById("hswing").checked;
+  payload["verticalSwing"] = document.getElementById("vswing").checked;
+  payload["mode"] = 0;
+  payload["fan"] = 8;
+  payload["temp"] = document.getElementById("acTemp").value;
+
+  channel.push('ac:send', {id: output, payload: payload});
+}, false);
