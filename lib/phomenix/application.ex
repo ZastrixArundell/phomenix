@@ -11,9 +11,10 @@ defmodule Phomenix.Application do
       # Start the Ecto repository
       Phomenix.Repo,
       # Start the endpoint when the application starts
-      PhomenixWeb.Endpoint
+      PhomenixWeb.Endpoint,
       # Starts a worker by calling: Phomenix.Worker.start_link(arg)
       # {Phomenix.Worker, arg},
+      {Phomenix.Controllers.Watcher, :controller}
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html

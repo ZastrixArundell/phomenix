@@ -1,5 +1,6 @@
 defmodule PhomenixWeb.Router do
   use PhomenixWeb, :router
+  import Plug.BasicAuth
 
   pipeline :browser do
     plug :accepts, ["html"]
@@ -7,6 +8,7 @@ defmodule PhomenixWeb.Router do
     plug :fetch_flash
     plug :protect_from_forgery
     plug :put_secure_browser_headers
+    plug :basic_auth, Application.get_env(:phomenix, __MODULE__)
   end
 
   pipeline :api do
@@ -16,7 +18,8 @@ defmodule PhomenixWeb.Router do
   scope "/", PhomenixWeb do
     pipe_through :browser
 
-    get "/", PageController, :index
+    get "/", ControllerController, :index
+    get "/:id", ControllerController, :show
   end
 
   # Other scopes may use custom stacks.

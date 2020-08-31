@@ -1,0 +1,21 @@
+<h1>Listing Controllers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for controller <- @controller do %>
+    <tr>
+      <td><%= controller.name %></td>
+
+      <td>
+        <span><%= link "Show", to: Routes.controller_path(@conn, :show, controller) %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>

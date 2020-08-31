@@ -26,6 +26,13 @@ config :logger, :console,
 # Use Jason for JSON parsing in Phoenix
 config :phoenix, :json_library, Jason
 
+config :phomenix, PhomenixWeb.Router,
+  username: System.get_env("SECRET_USERNAME") || "username",
+  password: System.get_env("SECRET_PASSWORD") || "password"
+
+config :phomenix, PhomenixWeb.ControllerSocket,
+  secret_auth_key: System.get_env("SECRET_AUTH_KEY") || "SECRET_SAYS_WHAT"
+
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
 import_config "#{Mix.env()}.exs"
