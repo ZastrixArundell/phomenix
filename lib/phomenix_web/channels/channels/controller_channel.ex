@@ -4,7 +4,7 @@ defmodule PhomenixWeb.ControllerChannel do
 
   def join("controller:" <> controller_name, payload, socket) do
     socket = socket |> assign(:name, payload["name"])
-    :ok = Watcher.monitor(:controller, self(), {__MODULE__, :leave, [controller_name, payload["name"]]})
+    :ok = Watcher.monitor(:controller, self(), {__MODULE__, :leave, [controller_name, payload]})
     {:ok, socket}
   end
 
