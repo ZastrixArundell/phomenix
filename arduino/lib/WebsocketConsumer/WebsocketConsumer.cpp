@@ -8,8 +8,6 @@ using namespace websockets;
 
 IRmanager manager(D6);
 
-#define TESTING_AC true 
-
 void websocket_consumer::consumeMessage(const WebsocketsMessage& message)
 {
     Serial.print("Using consumer on: ");
@@ -23,32 +21,7 @@ void websocket_consumer::consumeMessage(const WebsocketsMessage& message)
     if(event == "ir_write")
     {
         String code = doc["payload"]["code"];
-
-        #if TESTING_AC
-            ACdata data;
-            // Booleans
-            data.power           = true;
-            data.eco             = false;
-            data.health          = false;
-            data.light           = true;
-            data.turbo           = false;
-            data.horizontalSwing = false;
-            data.verticalSwing   = false;
-            // Integers
-            data.mode            = 8;
-            data.fan             = 0;
-            // Floats
-            data.temp            = 22.5;
-            manager.sendACdata(data);
-            delay(1000);
-            data.light = false;
-            manager.sendACdata(data);
-            delay(1000);
-            data.light = true;
-            manager.sendACdata(data);
-        #else
-            manager.sendRaw(code);
-        #endif
+        manager.sendRaw(code);
     }
     else if(event == "ac_write")
     {
