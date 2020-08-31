@@ -1,0 +1,32 @@
+<table>
+  <thead>
+    <tr>
+      <th>AC controls</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><button id="powerButton" class="ac-button ac-element button-red">OFF</button></td>
+      <td><input id="acTemp" type="number" name="AC temperature" step=0.5 min=16 max=31 class="ac-element"></td>
+      <td><button id="sendButton" class="ac-button ac-element button-green-2">Send to ac</button></td>
+    </tr>
+    <tr>
+      <td>
+        <label for="lights" class="center">Lights</label>
+        <input type="checkbox" name="Lights" id="lights" class="ac-element">
+      </td>
+      <td>
+        <label for="turbo" class="center">Turbo</label>
+        <input type="checkbox" name="Turbo" id="turbo" class="ac-element">
+      </td>
+      <td>
+        <label for="hswing" class="center">Horizontal Swing</label>
+        <input type="checkbox" name="Horizontal Swing" id="hswing" class="ac-element">
+      </td>
+      <td>
+        <label for="vswing" class="center">Vertical Swing</label>
+        <input type="checkbox" name="Vertical Swing" id="vswing" class="ac-element">
+      </td>
+    </tr>
+  </tbody>
+</table>

@@ -2,7 +2,7 @@
 <h1>Showing <%= @controller.name %></h1>
 
 <%= if @controller.ac_mode do %>
-  <%= render "_ac.html" %>
+  <%= render "_ac.html", assigns %>
 <% end %>
 
 <%= if @controller.rgb_mode do %>

@@ -2,6 +2,18 @@
 
 @import "./phoenix.css";
 
+.ac-element {
+    width: 100%;
+}
+
+.center {
+    text-align: center;
+}
+
+.ac-button {
+    border-color: rgba(0, 0, 0, 0);
+}
+
 .controller-button {
     min-width: 100%;
     background-color: seagreen;
