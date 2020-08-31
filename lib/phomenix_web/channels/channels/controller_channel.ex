@@ -12,6 +12,10 @@ defmodule PhomenixWeb.ControllerChannel do
     PhomenixWeb.Endpoint.broadcast!("controller:#{controller_id}", "ir_write", %{code: code})
   end
 
+  def send_ac_to_controller(controller_id, payload) do
+    PhomenixWeb.Endpoint.broadcast!("controller:#{controller_id}", "ac_write", payload)
+  end
+
   require Logger
 
   def leave(room_id, user_id) do

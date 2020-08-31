@@ -9,4 +9,9 @@ defmodule PhomenixWeb.UserChannel do
     PhomenixWeb.ControllerChannel.send_ir_to_controller(id, code)
     {:noreply, socket}
   end
+
+  def handle_in("ac:send", %{"id" => id, "payload" => payload}, socket) do
+    PhomenixWeb.ControllerChannel.send_ac_to_controller(id, payload)
+    {:noreply, socket}
+  end
 end
