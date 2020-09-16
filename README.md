@@ -42,17 +42,6 @@ Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
 
 Ready to run in production? Please [check our deployment guides](https://hexdocs.pm/phoenix/deployment.html).
 
-## Usage
-
-Once your server is up and running and the Arduino client connected, head onto the main page: http://localhost:4000/
-
-You will have a list of connected controllers:
-![Index image](https://raw.githubusercontent.com/zastrixarundell/ex_led/master/images/index.png "Index image")
-
-Then click on the `Show` linnk on the right of the controller name and you will have this page opened:
-
-![Show image](https://raw.githubusercontent.com/zastrixarundell/ex_led/master/images/show.png "Show image")
-
 ## Sending custom codes
 Currently the code works by extracting the HEX IDs of `button.controller-button#hex-code`.
 
