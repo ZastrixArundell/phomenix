@@ -1,6 +1,88 @@
 /* This file is for your main application css. */
 
-@import "./phoenix.css";
+
+/* Main page elements */
+
+:root {
+    --body: #212529;
+    --nav: #191c1f;
+}
+
+* {
+    font-family: "Heebo", "sans-serif";
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    color: #edf0f1;
+}
+
+body {
+    background-color: var(--body);
+}
+
+li,
+a,
+button {
+    font-weight: 400;
+    font-size: 16px;
+    color: #edf0f1;
+    text-decoration: none;
+}
+
+header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 20px 10%;
+    background-color: var(--nav);
+}
+
+.logo-header {
+    cursor: pointer;
+    margin-right: auto;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    text-transform: uppercase;
+    /* Added flexbox here to get rid of the whitespace issues. */
+}
+
+.nav-links li {
+    padding: 0px 0px;
+    margin: 0 20px;
+}
+
+.nav-links li a {
+    font-weight: 500;
+}
+
+*>.underline-link {
+    position: relative;
+}
+
+.underline-link::after {
+    content: " ";
+    background-color: white;
+    width: 0;
+    height: 3px;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    transition: 0.3s;
+}
+
+main {
+    width: 60%;
+    margin-top: 30px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.underline-link:hover::after {
+    width: 100%;
+}
 
 .ac-element {
     width: 100%;
@@ -41,6 +123,7 @@
     color: black;
 }
 
+
 /* Options for red buttons */
 
 .button-red-0 {
@@ -63,6 +146,7 @@
     background-color: #D8B201;
 }
 
+
 /* Options for green buttons */
 
 .button-green-0 {
@@ -84,6 +168,7 @@
 .button-green-4 {
     background-color: #0579B1;
 }
+
 
 /* Options for blue buttons */
 
