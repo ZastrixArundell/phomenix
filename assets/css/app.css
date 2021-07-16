@@ -7,6 +7,10 @@
 :root {
     --body: #212529;
     --nav: #191c1f;
+    --text-color: #edf0f1;
+    --gray-dark: #1e2124;
+    --dark-highlight: #111416;
+    --highlight: teal;
 }
 
 * {
@@ -14,7 +18,7 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
-    color: #edf0f1;
+    color: var(--text-color);
 }
 
 body {
@@ -26,7 +30,7 @@ a,
 button {
     font-weight: 400;
     font-size: 16px;
-    color: #edf0f1;
+    color: var(--text-color);
     text-decoration: none;
 }
 
@@ -86,7 +90,7 @@ underline-link:hover::after {
 }
 
 .fade-in-left {
-    animation: fadeInLeft ease 1s forwards;
+    animation: fadeInLeft ease 0.7s forwards;
 }
 
 @keyframes fadeInLeft {
@@ -104,6 +108,24 @@ underline-link:hover::after {
     font-size: 4rem;
     text-align: center;
     text-transform: capitalize;
+}
+
+.inner-page {
+    animation: innerPageFadeIn ease-out 0.7s forwards;
+}
+
+@keyframes innerPageFadeIn {
+    0% {
+        transform: translateX(-50px);
+        opacity: 0;
+    }
+    50% {
+        transform: translateX(-50px);
+        opacity: 0;
+    }
+    100% {
+        opacity: 100%;
+    }
 }
 
 .ac-element {

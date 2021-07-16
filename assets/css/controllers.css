@@ -16,7 +16,7 @@
 }
 
 .action-row {
-    background-color: #1e2124;
+    background-color: var(--gray-dark);
     width: 100%;
     min-height: 4em;
     display: flex;
@@ -40,7 +40,7 @@
 .action-function {
     flex: 1;
     border: none;
-    background-color: teal;
+    background-color: var(--highlight);
     border-left: 1px solid white;
 }
 
@@ -48,4 +48,73 @@
     font-weight: 300;
     background-color: transparent;
     border: none;
+}
+
+
+/* Collapsible stuff */
+
+.collapsible-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+    gap: 10px;
+}
+
+.collapsible-column {
+    width: 100%;
+    overflow: hidden;
+}
+
+.collapsible {
+    background-color: var(--nav);
+    color: #eee;
+    min-height: 100px;
+    cursor: pointer;
+    padding: 18px;
+    border: none;
+    width: 100%;
+    text-align: left;
+    outline: none;
+    font-size: 30px;
+    font-weight: 100;
+}
+
+.collapsible-active,
+.collapsible:hover {
+    background-color: var(--dark-highlight);
+}
+
+.collapsible:after {
+    content: '\02795';
+    /* Unicode character for "plus" sign (+) */
+    color: white !important;
+    float: right;
+    margin-left: 5px;
+}
+
+.collapsible-active:after {
+    content: "\2796";
+    /* Unicode character for "minus" sign (-) */
+}
+
+.collapsible-content::before {
+    padding: 18px;
+    content: '';
+}
+
+.collapsible-content::after {
+    padding: 18px;
+    content: '';
+}
+
+.collapsible-content {
+    position: relative;
+    width: 100%;
+    max-height: 0px;
+    overflow: hidden;
+    background-color: var(--highlight);
+    transition: max-height 0.2s ease-out;
+    padding-left: 18px;
+    padding-right: 18px;
 }
