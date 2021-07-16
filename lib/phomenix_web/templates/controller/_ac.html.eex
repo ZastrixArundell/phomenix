@@ -4,9 +4,9 @@
     <div>
       <div class="flex-column">
         <div class="flex-row">
-          <button id="powerButton" class="borderless ac-control button-green-1 flex-element-1">ON</button>
+          <button id="powerButton" class="pointer-button borderless ac-control button-green-1 flex-element-1">ON</button>
           <input id="acTemp" type="number" name="AC temperature" step=0.5 min=16 max=31 value=26 class="borderless ac-temp ac-control dark-text flex-element-3">
-          <button id="sendButton" class="borderless ac-control button-green-2 flex-element-1">Send to ac</button>
+          <button id="sendButton" class="pointer-button borderless ac-control button-green-2 flex-element-1">Send to ac</button>
         </div>
         <div class="flex-row">
           <div class="flex-element-1 ac-selection">

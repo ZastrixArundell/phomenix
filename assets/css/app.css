@@ -84,6 +84,7 @@ main {
     margin-top: 50px;
     margin-right: auto;
     margin-left: auto;
+    margin-bottom: 100px;
 }
 
 underline-link:hover::after {
@@ -145,10 +146,8 @@ underline-link:hover::after {
     color: gray;
 }
 
-.controller-button {
-    min-width: 100%;
-    background-color: seagreen;
-    border-color: rgba(0, 0, 0, 0);
+.pointer-button {
+    cursor: pointer;
 }
 
 .button-white {

@@ -163,3 +163,12 @@
     font-size: 2rem;
     text-align: center;
 }
+
+.rgb-button-row {
+    gap: 20px;
+}
+
+.rgb-button {
+    height: 50px;
+    font-weight: 400;
+}
