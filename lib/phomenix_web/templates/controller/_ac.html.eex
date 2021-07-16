@@ -1,37 +1,32 @@
 <div class="collapsible-column">
   <button class="collapsible" type="button" target="ac-controls">AC controls</button>
   <div class="collapsible-content" id="ac-controls">
-    <table>
-      <thead>
-        <tr>
-          <th>AC controls</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><button id="powerButton" class="ac-button ac-element button-green-1">ON</button></td>
-          <td><input id="acTemp" type="number" name="AC temperature" step=0.5 min=16 max=31 value=23 class="ac-element"></td>
-          <td><button id="sendButton" class="ac-button ac-element button-green-2">Send to ac</button></td>
-        </tr>
-        <tr>
-          <td>
-            <label for="lights" class="center">Lights</label>
-            <input type="checkbox" name="Lights" id="lights" class="ac-element">
-          </td>
-          <td>
-            <label for="turbo" class="center">Turbo</label>
-            <input type="checkbox" name="Turbo" id="turbo" class="ac-element">
-          </td>
-          <td>
-            <label for="hswing" class="center">Horizontal Swing</label>
-            <input type="checkbox" name="Horizontal Swing" id="hswing" class="ac-element">
-          </td>
-          <td>
-            <label for="vswing" class="center">Vertical Swing</label>
-            <input type="checkbox" name="Vertical Swing" id="vswing" class="ac-element">
-          </td>
-        </tr>
-      </tbody>
-    </table>
+    <div>
+      <div class="flex-column">
+        <div class="flex-row">
+          <button id="powerButton" class="borderless ac-control button-green-1 flex-element-1">ON</button>
+          <input id="acTemp" type="number" name="AC temperature" step=0.5 min=16 max=31 value=26 class="borderless ac-temp ac-control dark-text flex-element-3">
+          <button id="sendButton" class="borderless ac-control button-green-2 flex-element-1">Send to ac</button>
+        </div>
+        <div class="flex-row">
+          <div class="flex-element-1 ac-selection">
+            <label for="lights" class="center ac-title">Lights</label>
+            <input type="checkbox" name="Lights" checked="checked" id="lights" class="ac-box">
+          </div>
+          <div class="flex-element-1 ac-selection">
+            <label for="turbo" class="center ac-title">Turbo</label>
+            <input type="checkbox" name="Turbo" id="turbo" class="ac-box">
+          </div>
+          <div class="flex-element-1 ac-selection">
+            <label for="hswing" class="center ac-title">Horizontal Swing</label>
+            <input type="checkbox" name="Horizontal Swing" checked="checked" id="hswing" class="ac-box">
+          </div>
+          <div class="flex-element-1 ac-selection">
+            <label for="vswing" class="center ac-title">Vertical Swing</label>
+            <input type="checkbox" name="Vertical Swing" checked="checked" id="vswing" class="ac-box">
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
