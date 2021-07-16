@@ -13,7 +13,7 @@
       <h1 class="logo-header">Phomenix</h1>
       <nav>
         <ul class="nav-links">
-          <li><a href="#1" class="underline-link">Controllers</a></li>
+          <li><a href="/" class="underline-link">Controllers</a></li>
           <li><a href="#2" class="underline-link">Github</a></li>
         </ul>
       </nav>
