@@ -1,5 +1,4 @@
-
-<h1>Showing <%= @controller.name %></h1>
+<h1 class="fade-in-left title">Showing <%= @controller.name %></h1>
 
 <%= if @controller.ac_mode do %>
   <%= render "_ac.html", assigns %>

@@ -1,0 +1,51 @@
+.action-text {
+    font-size: 2rem;
+    font-weight: 100;
+}
+
+.action-table {
+    /* background-color: red; */
+    margin-top: 50px;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+}
+
+.action-row {
+    background-color: #1e2124;
+    width: 100%;
+    min-height: 4em;
+    display: flex;
+    align-items: stretch;
+    border: 1px solid white;
+    border-radius: 50px;
+    overflow: hidden;
+}
+
+.action-row>* {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.action-name {
+    flex: 3;
+    width: 100%;
+}
+
+.action-function {
+    flex: 1;
+    border: none;
+    background-color: teal;
+    border-left: 1px solid white;
+}
+
+.action-function>button {
+    font-weight: 300;
+    background-color: transparent;
+    border: none;
+}

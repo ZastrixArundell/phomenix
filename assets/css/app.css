@@ -1,5 +1,6 @@
 /* This file is for your main application css. */
 
+@import "./controllers.css";
 
 /* Main page elements */
 
@@ -75,13 +76,34 @@ header {
 
 main {
     width: 60%;
-    margin-top: 30px;
+    margin-top: 50px;
     margin-right: auto;
     margin-left: auto;
 }
 
-.underline-link:hover::after {
+underline-link:hover::after {
     width: 100%;
+}
+
+.fade-in-left {
+    animation: fadeInLeft ease 1s forwards;
+}
+
+@keyframes fadeInLeft {
+    0% {
+        transform: translateX(-50px);
+        opacity: 0;
+    }
+    100% {
+        opacity: 100%;
+    }
+}
+
+.title {
+    font-weight: 200;
+    font-size: 4rem;
+    text-align: center;
+    text-transform: capitalize;
 }
 
 .ac-element {

@@ -1,21 +1,10 @@
-<h1>Listing Controllers</h1>
+<h1 class="fade-in-left title">Listing Controllers</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-<%= for controller <- @controller do %>
-    <tr>
-      <td><%= controller.name %></td>
-
-      <td>
-        <span><%= link "Show", to: Routes.controller_path(@conn, :show, controller) %></span>
-      </td>
-    </tr>
-<% end %>
-  </tbody>
-</table>
+<div class="action-table">
+  <%= for controller <- @controller do %>
+    <div class="action-row">
+      <span class="action-name action-text"><%= controller.name %></span>
+      <a class="action-function" href="<%= Routes.controller_path(@conn, :show, controller) %>"><button class="action-text">Show</button></a>
+    </div>
+  <% end %>
+</div>
