@@ -10,10 +10,10 @@ use Mix.Config
 # which you should run after static files are built and
 # before starting your production server.
 config :phomenix, PhomenixWeb.Endpoint,
-  url: [host: "phomenix.gigalixirapp.com", port: 443],
+  url: [host: "phomenix.herokuapp.com", port: 443],
   cache_static_manifest: "priv/static/cache_manifest.json",
   check_origin: [
-    "https://phomenix.gigalixirapp.com"
+    "https://phomenix.herokuapp.com"
   ],
   force_ssl: [rewrite_on: [:x_forwarded_proto]]
 
