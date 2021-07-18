@@ -85,6 +85,7 @@ main {
     margin-right: auto;
     margin-left: auto;
     margin-bottom: 100px;
+    text-align: center;
 }
 
 underline-link:hover::after {
@@ -238,4 +239,10 @@ underline-link:hover::after {
 
 .button-blue-4 {
     background-color: #B3327C;
+}
+
+@media only screen and (max-width: 1200px) {
+    main {
+        width: 80%;
+    }
 }
