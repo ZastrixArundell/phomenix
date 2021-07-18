@@ -93,9 +93,7 @@ underline-link:hover::after {
 }
 
 .fade-in-left {
-    -webkit-animation: fadeInLeft ease 0.7s forwards;
-    animation: fadeInLeft ease 0.7s forwards;
-    animation-fill-mode: forwards
+    animation: fadeInLeft ease 0.7s;
 }
 
 @keyframes fadeInLeft {
@@ -104,7 +102,7 @@ underline-link:hover::after {
         opacity: 0;
     }
     100% {
-        opacity: 100%;
+        opacity: 1;
     }
 }
 
@@ -116,9 +114,7 @@ underline-link:hover::after {
 }
 
 .inner-page {
-    -webkit-animation: innerPageFadeIn ease-out 0.7s forwards;
-    animation: innerPageFadeIn ease-out 0.7s forwards;
-    animation-fill-mode: forwards
+    animation: innerPageFadeIn ease-out 0.7s;
 }
 
 @keyframes innerPageFadeIn {
@@ -131,7 +127,7 @@ underline-link:hover::after {
         opacity: 0;
     }
     100% {
-        opacity: 100%;
+        opacity: 1;
     }
 }
 
