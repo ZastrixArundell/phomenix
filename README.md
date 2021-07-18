@@ -17,6 +17,8 @@ You will need to declare variables in the `arduino/src/main.cpp` file or create 
 #define DEVICE_ID "living_room"
 #define DEVICE_NAME "Backlight Table"
 #define ORIGIN "https://192.168.0.102:4000"
+#define AC_MODE true
+#define RGB_STRIP true
 ```
 
 The `Config.h` file is in `.gitignore` so I don't accidentally put my Server or WiFi credentials on the net.
@@ -26,8 +28,13 @@ The `Config.h` file is in `.gitignore` so I don't accidentally put my Server or 
 Once you've set the variables on the Arduino side, you'll need to set the secret key variable on the Phoenix side. For this just go to `config/config.exs` and edit the following:
 
 ```elixir
-config :ex_led, ExLedWeb.ControllerSocket,
-  secret_auth_key: "SECRET_SAYS_WHAT"
+config :phomenix, PhomenixWeb.ControllerSocket,
+  secret_auth_key: System.get_env("SECRET_AUTH_KEY") || "SECRET_SAYS_WHAT"
+
+config :phomenix, PhomenixWeb.Router,
+  username: System.get_env("SECRET_USERNAME") || "username",
+  password: System.get_env("SECRET_PASSWORD") || "password"
+
   ```
 
 With the secret key you want to use.

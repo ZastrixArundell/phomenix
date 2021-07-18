@@ -1,12 +1,14 @@
+<h1 class="fade-in-left title">Showing <%= @controller.name %></h1>
+<div class="inner-page">
+  <div class="action-table">
+    <%= if @controller.ac_mode do %>
+      <%= render "_ac.html", assigns %>
+    <% end %>
 
-<h1>Showing <%= @controller.name %></h1>
+    <%= if @controller.rgb_mode do %>
+      <%= render "_rgb.html", assigns %>
+    <% end %>
+  </div>
+</div>
 
-<%= if @controller.ac_mode do %>
-  <%= render "_ac.html", assigns %>
-<% end %>
-
-<%= if @controller.rgb_mode do %>
-  <%= render "_rgb.html" %>
-<% end %>
-
-<span><%= link "Back", to: Routes.controller_path(@conn, :index) %></span>
+<script src="<%= Routes.static_path(@conn, "/js/controller.js") %>"></script>

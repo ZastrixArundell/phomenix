@@ -1,0 +1,186 @@
+.action-text {
+    font-size: 2rem;
+    font-weight: 100;
+}
+
+.action-table {
+    /* background-color: red; */
+    margin-top: 50px;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+}
+
+.action-row {
+    background-color: var(--nav);
+    width: 100%;
+    min-height: 5em;
+    display: flex;
+    align-items: stretch;
+    overflow: hidden;
+    flex-wrap: wrap;
+}
+
+.action-row>* {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.action-name {
+    flex: 3;
+    width: 100%;
+    min-width: 200px;
+    padding: 10px 20px 10px 20px;
+}
+
+.action-function {
+    flex: 1;
+    border: none;
+    background-color: var(--highlight);
+    padding: 10px 20px 10px 20px;
+}
+
+.action-function>button {
+    font-weight: 300;
+    background-color: transparent;
+    border: none;
+}
+
+
+/* Collapsible stuff */
+
+.collapsible-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+    gap: 10px;
+}
+
+.collapsible-column {
+    width: 100%;
+    overflow: hidden;
+}
+
+.collapsible {
+    background-color: var(--nav);
+    color: #eee;
+    min-height: 100px;
+    cursor: pointer;
+    padding: 18px;
+    border: none;
+    width: 100%;
+    text-align: left;
+    outline: none;
+    font-size: 30px;
+    font-weight: 100;
+}
+
+.collapsible-active,
+.collapsible:hover {
+    background-color: var(--dark-highlight);
+}
+
+.collapsible:after {
+    content: '\02795';
+    /* Unicode character for "plus" sign (+) */
+    color: white !important;
+    float: right;
+    margin-left: 5px;
+}
+
+.collapsible-active:after {
+    content: "\2796";
+    /* Unicode character for "minus" sign (-) */
+}
+
+.collapsible-content {
+    position: relative;
+    width: 100%;
+    max-height: 0px;
+    overflow: hidden !important;
+    background-color: var(--second-highlight);
+    transition: max-height 0.2s ease-in-out;
+}
+
+.collapsible-content>div {
+    padding: 50px;
+}
+
+
+/* AC stuff */
+
+.flex-column {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: stretch;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.flex-row {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.flex-element-1 {
+    flex: 1;
+}
+
+.flex-element-2 {
+    flex: 2;
+}
+
+.flex-element-3 {
+    flex: 3;
+}
+
+.ac-title {
+    font-weight: 100;
+    font-size: 2rem;
+}
+
+.ac-box {
+    transform: scale(2);
+    background-color: red;
+}
+
+.ac-selection-row {
+    gap: 40px;
+}
+
+.ac-selection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.ac-control {
+    height: 60px;
+    min-width: 150px;
+}
+
+.ac-temp {
+    min-width: 150px;
+    font-size: 1rem;
+    text-align: center;
+    -moz-appearance: textfield;
+}
+
+.rgb-button-row {
+    gap: 20px;
+}
+
+.rgb-button {
+    min-width: 100px;
+    height: 50px;
+    font-weight: 400;
+}
